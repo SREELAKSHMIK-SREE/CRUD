@@ -1,0 +1,24 @@
+
+  {% extends 'base.html' %} 
+  {% load crispy_forms_tags %}
+
+  {% block content %}
+<form  method="post">
+  {% csrf_token %}
+    {{k.fullname|as_crispy_field}}
+    {{k.Emp_code|as_crispy_field}}
+    <div class="row">
+      <div class="col-md-4">{{k.Mob_number|as_crispy_field}}</div>
+      <div class="col-md-8">{{k.position|as_crispy_field}}</div>
+    </div>
+    <br><br>
+    
+    <div class="row">
+      <div class="col-md-8"><button type="submit" class="btn btn-success"><i class="fa-regular fa-face-grin-hearts"></i> Submit</button></div>
+    
+    <div class="col-md-4">
+      <a href=""><button type="submit" class="btn btn-info"><i class="fa-solid fa-angles-left"></i>Back to List</button></a>
+    </div>
+    
+  </div></form>
+  {% endblock %}
